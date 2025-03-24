@@ -12,10 +12,9 @@ from pathlib import Path
 
 # 定义测试文件和分数
 TESTS = [
-    {"name": "Logistic映射", "file": "tests/test_logistic.py", "points": 10},
-    {"name": "细菌生长模型", "file": "tests/test_bacteria_model.py", "points": 10},
-    {"name": "HIV病毒载量模型", "file": "tests/test_hiv_model.py", "points": 10},
-    {"name": "Millikan实验", "file": "tests/test_millikan.py", "points": 10}
+    {"name": "随机游走模拟", "file": "tests/test_random_walk.py", "points": 15},
+    {"name": "稀有事件模拟", "file": "tests/test_rare_events.py", "points": 15},
+    {"name": "随机文本生成器", "file": "tests/test_markov.py", "points": 15}
 ]
 
 def run_test(test_file):
