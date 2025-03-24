@@ -23,24 +23,18 @@ def generate_random_walk(num_steps=1000):
     return x, y
 
 def plot_single_walk(x, y):
-    """
-    绘制单个随机游走轨迹
-    
-    参数:
-        x, y: 轨迹坐标数组
-    """
+    """绘制单个随机游走轨迹"""
     plt.figure(figsize=(8, 8))
     plt.plot(x, y, 'b-', alpha=0.7)
-    plt.plot(x[0], y[0], 'go', markersize=10, label='起点')  # 起点
-    plt.plot(x[-1], y[-1], 'ro', markersize=10, label='终点')  # 终点
-    plt.title('二维随机游走轨迹')
+    plt.plot(x[0], y[0], 'go', markersize=10, label='Start')  # 起点
+    plt.plot(x[-1], y[-1], 'ro', markersize=10, label='End')  # 终点
+    plt.title('2D Random Walk Trajectory')
     plt.xlabel('X')
     plt.ylabel('Y')
     plt.grid(True)
-    plt.axis('equal')  # 确保x和y轴比例相同
+    plt.axis('equal')
     plt.legend()
     plt.show()
-    
     return plt
 
 def plot_multiple_walks(num_walks=4):
@@ -72,9 +66,9 @@ def plot_multiple_walks(num_walks=4):
     for i, (x, y) in enumerate(walks):
         plt.subplot(2, 2, i+1)
         plt.plot(x, y, '-', alpha=0.7)
-        plt.plot(x[0], y[0], 'go', markersize=8, label='起点')
-        plt.plot(x[-1], y[-1], 'ro', markersize=8, label='终点')
-        plt.title(f'随机游走 #{i+1}')
+        plt.plot(x[0], y[0], 'go', markersize=8, label='Start')
+        plt.plot(x[-1], y[-1], 'ro', markersize=8, label='End')
+        plt.title(f'Random Walk #{i+1}')
         plt.grid(True)
         
         # 设置统一的坐标轴范围
@@ -113,7 +107,7 @@ def analyze_walks_statistics(num_walks=1000, num_steps=1000):
     # 绘制终点散点图
     plt.figure(figsize=(10, 8))
     plt.scatter(x_final, y_final, alpha=0.5)
-    plt.title(f'{num_walks}次随机游走的终点分布')
+    plt.title(f'End Points Distribution of {num_walks} Random Walks')
     plt.xlabel('X')
     plt.ylabel('Y')
     plt.grid(True)
@@ -123,27 +117,27 @@ def analyze_walks_statistics(num_walks=1000, num_steps=1000):
     # 绘制位移直方图
     plt.figure(figsize=(10, 6))
     plt.hist(displacement, bins=30, alpha=0.7)
-    plt.title(f'{num_walks}次随机游走的位移分布')
-    plt.xlabel('位移')
-    plt.ylabel('频率')
+    plt.title(f'Displacement Distribution of {num_walks} Random Walks')
+    plt.xlabel('Displacement')
+    plt.ylabel('Frequency')
     plt.grid(True)
     plt.show()
     
     # 绘制位移平方直方图
     plt.figure(figsize=(10, 6))
     plt.hist(displacement**2, bins=30, alpha=0.7)
-    plt.title(f'{num_walks}次随机游走的位移平方分布')
-    plt.xlabel('位移平方')
-    plt.ylabel('频率')
+    plt.title(f'Squared Displacement Distribution of {num_walks} Random Walks')
+    plt.xlabel('Squared Displacement')
+    plt.ylabel('Frequency')
     plt.grid(True)
     plt.show()
     
     # 半对数图
     plt.figure(figsize=(10, 6))
     plt.hist(displacement**2, bins=30, alpha=0.7, log=True)
-    plt.title(f'{num_walks}次随机游走的位移平方分布 (半对数)')
-    plt.xlabel('位移平方')
-    plt.ylabel('频率 (对数尺度)')
+    plt.title(f'Squared Displacement Distribution (Semi-log)')
+    plt.xlabel('Squared Displacement')
+    plt.ylabel('Frequency (Log Scale)')
     plt.grid(True)
     plt.show()
     
@@ -171,18 +165,18 @@ def compare_mean_squared_displacement():
     # 绘制均方位移与步数的关系
     plt.figure(figsize=(10, 6))
     plt.plot(step_sizes, msd_values, 'o-', linewidth=2)
-    plt.title('均方位移与步数的关系')
-    plt.xlabel('步数')
-    plt.ylabel('均方位移')
+    plt.title('Mean Squared Displacement vs. Number of Steps')
+    plt.xlabel('Number of Steps')
+    plt.ylabel('Mean Squared Displacement')
     plt.grid(True)
     plt.show()
     
     # 对数-对数图
     plt.figure(figsize=(10, 6))
     plt.loglog(step_sizes, msd_values, 'o-', linewidth=2)
-    plt.title('均方位移与步数的关系 (对数-对数)')
-    plt.xlabel('步数 (对数尺度)')
-    plt.ylabel('均方位移 (对数尺度)')
+    plt.title('Mean Squared Displacement vs. Number of Steps (Log-Log)')
+    plt.xlabel('Number of Steps (Log Scale)')
+    plt.ylabel('Mean Squared Displacement (Log Scale)')
     plt.grid(True)
     plt.show()
     

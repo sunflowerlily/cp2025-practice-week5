@@ -42,18 +42,18 @@ def analyze_waiting_times(num_flips=1000, p=0.08):
     # 绘制等待时间分布
     plt.figure(figsize=(10, 6))
     plt.hist(waiting_times, bins=30, alpha=0.7)
-    plt.title('等待时间分布')
-    plt.xlabel('等待时间')
-    plt.ylabel('频率')
+    plt.title('Waiting Time Distribution')
+    plt.xlabel('Waiting Time')
+    plt.ylabel('Frequency')
     plt.grid(True)
     plt.show()
     
     # 半对数图
     plt.figure(figsize=(10, 6))
     plt.hist(waiting_times, bins=30, alpha=0.7, log=True)
-    plt.title('等待时间分布 (半对数)')
-    plt.xlabel('等待时间')
-    plt.ylabel('频率 (对数尺度)')
+    plt.title('Waiting Time Distribution (Semi-log)')
+    plt.xlabel('Waiting Time')
+    plt.ylabel('Frequency (Log Scale)')
     plt.grid(True)
     plt.show()
     
@@ -62,9 +62,9 @@ def analyze_waiting_times(num_flips=1000, p=0.08):
     unique_times = np.unique(waiting_times)
     frequencies = [np.sum(waiting_times == t) for t in unique_times]
     plt.loglog(unique_times, frequencies, 'o-')
-    plt.title('等待时间分布 (对数-对数)')
-    plt.xlabel('等待时间 (对数尺度)')
-    plt.ylabel('频率 (对数尺度)')
+    plt.title('Waiting Time Distribution (Log-Log)')
+    plt.xlabel('Waiting Time (Log Scale)')
+    plt.ylabel('Frequency (Log Scale)')
     plt.grid(True)
     plt.show()
     
@@ -78,15 +78,15 @@ def plot_distribution_comparison(experimental_data, theoretical_data):
     
     # 绘制实验数据的直方图
     plt.hist(experimental_data, bins=range(int(max(experimental_data))+2),
-             density=True, alpha=0.7, label='实验数据')
+             density=True, alpha=0.7, label='Experimental Data')
     
     # 绘制理论分布
     l_values = np.arange(len(theoretical_data))
-    plt.plot(l_values, theoretical_data, 'r-', label='理论分布')
+    plt.plot(l_values, theoretical_data, 'r-', label='Theoretical Distribution')
     
-    plt.title('实验结果与理论分布比较')
-    plt.xlabel('正面次数')
-    plt.ylabel('概率/频率')
+    plt.title('Comparison of Experimental and Theoretical Distributions')
+    plt.xlabel('Number of Heads')
+    plt.ylabel('Probability/Frequency')
     plt.legend()
     plt.grid(True)
     plt.show()
@@ -97,7 +97,7 @@ if __name__ == "__main__":
     pmf = calculate_poisson_pmf(l_values)
     plt.figure(figsize=(10, 6))
     plt.bar(l_values, pmf)
-    plt.title('泊松分布 (λ=8)')
+    plt.title('Poisson Distribution (λ=8)')
     plt.xlabel('l')
     plt.ylabel('P(l)')
     plt.grid(True)

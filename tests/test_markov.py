@@ -3,15 +3,15 @@ import os
 import pytest
 
 # 添加src目录到Python路径
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
-
-import markov
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
+from src.markov import process_line, process_textfile, generate_line
+#from solutions.markov_solution import process_line, process_textfile, generate_line
 
 def test_process_line():
     """测试单行文本处理"""
     # 测试基本功能 (k=1)
     line = "the cat sat"
-    transitions = markov.process_line(line, k=1)
+    transitions = process_line(line, k=1)
     expected = [
         ("BEGIN", "the"),
         ("the", "cat"),
@@ -21,7 +21,7 @@ def test_process_line():
     assert transitions == expected
     
     # 测试k=2的情况
-    transitions = markov.process_line(line, k=2)
+    transitions = process_line(line, k=2)
     expected = [
         ("BEGIN BEGIN", "the"),
         ("BEGIN the", "cat"),
@@ -37,13 +37,13 @@ def test_process_textfile(tmp_path):
     test_file.write_text("the cat sat\nthe dog ran")
     
     # 测试k=1的情况
-    transitions = markov.process_textfile(str(test_file), k=1)
+    transitions = process_textfile(str(test_file), k=1)
     assert "BEGIN" in transitions
     assert "the" in transitions
     assert len(transitions["the"]) == 2  # "cat" 和 "dog"
     
     # 测试k=2的情况
-    transitions = markov.process_textfile(str(test_file), k=2)
+    transitions = process_textfile(str(test_file), k=2)
     assert "BEGIN BEGIN" in transitions
     assert "the cat" in transitions
     assert "the dog" in transitions
@@ -60,7 +60,7 @@ def test_generate_line():
     
     # 生成多个句子并检查
     for _ in range(10):
-        line = markov.generate_line(transitions, k=1)
+        line = generate_line(transitions, k=1)
         words = line.split()
         assert words[0] == "the"
         assert words[1] in ["cat", "dog"]
