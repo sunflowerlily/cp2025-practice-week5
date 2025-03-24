@@ -62,4 +62,4 @@ python -m pytest tests/test_random_walk.py -v
 每个模型实现占15分，总分45分。评分将通过自动测试完成，测试通过即得满分。
 
 ## 参考资料
-- 《Python物理建模初学者指南》
+- 《Python物理建模初学者指南》第六章
