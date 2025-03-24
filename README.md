@@ -52,7 +52,7 @@ python -m pytest tests/
 
 # 运行特定测试
 python -m pytest tests/test_random_walk.py -v
-
+```
 ### 提交作业
 1. 完成 src/ 目录下的所有实现文件
 2. 确保所有测试通过
