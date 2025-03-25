@@ -8,11 +8,11 @@ cp2025-practice-week5/
 ├── src/                                 # 源代码目录（学生实现）
 │   ├── waiting_times.py                 # 等待时间分布分析
 │   ├── random_walk.py                   # 随机行走轨迹模拟
-│   ├── endpoints_analysis.py         # 随机行走终点分布分析
+│   ├── endpoints_analysis.py            # 随机行走终点分布分析
 │   ├── mean_square_displacement.py      # 随机行走均方位移分析
 │   ├── displacement_distribution.py     # 随机行走位移分布分析
 │   └── poisson_simulation.py            # 泊松分布数值模拟
-├── results/                             # 结果目录
+├── results/                             # 结果目录（学生填写）
 │   ├── 等待时间分布实验报告.md            # 等待时间分布实验报告
 │   ├── 随机行走轨迹实验报告.md            # 随机行走轨迹实验报告
 │   ├── 随机行走终点分布实验报告.md         # 随机行走终点分布实验报告
@@ -22,14 +22,14 @@ cp2025-practice-week5/
 ├── solutions/                           # 参考解答目录
 │   ├── waiting_times_solution.py        # 等待时间分布参考解答
 │   ├── random_walk_solution.py          # 随机行走轨迹参考解答
-│   ├── endpoints_analysis_solution.py # 随机行走终点分布参考解答
+│   ├── endpoints_analysis_solution.py    # 随机行走终点分布参考解答
 │   ├── mean_square_displacement_solution.py # 均方位移参考解答
 │   ├── displacement_distribution_solution.py # 位移分布参考解答
 │   └── poisson_simulation_solution.py   # 泊松分布参考解答
 ├── tests/                               # 测试文件目录
 │   ├── test_waiting_times.py            # 等待时间分布测试
 │   ├── test_random_walk.py              # 随机行走轨迹测试
-│   ├── test_endpoints_analysis.py    # 随机行走终点分布测试
+│   ├── test_endpoints_analysis.py       # 随机行走终点分布测试
 │   ├── test_mean_square_displacement.py # 均方位移测试
 │   ├── test_displacement_distribution.py # 位移分布测试
 │   └── test_poisson_simulation.py       # 泊松分布测试
