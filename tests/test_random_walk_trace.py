@@ -7,7 +7,7 @@ import pytest
 
 # 添加项目根目录到 Python 路径
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from src.random_walk import random_walk_2d, plot_single_walk, plot_multiple_walks
+from src.random_walk_trace import random_walk_2d, plot_single_walk, plot_multiple_walks
 
 def test_random_walk_2d_output_format():
     """测试随机行走函数的输出格式"""
