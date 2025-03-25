@@ -75,11 +75,9 @@ if __name__ == "__main__":
     np.random.seed(42)
     
     # 1. 绘制理论分布
-    plt.figure(1)
     plot_poisson_pmf()
     
     # 2&3. 进行实验模拟并比较结果
-    plt.figure(2)
     compare_simulation_theory()
     
     plt.show()

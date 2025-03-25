@@ -49,9 +49,13 @@ def compare_simulation_theory(n_experiments=10000, lambda_param=8):
     pass
 
 if __name__ == "__main__":
+    # 设置随机种子
     np.random.seed(42)
-    plt.figure(1)
+    
+    # 1. 绘制理论分布
     plot_poisson_pmf()
-    plt.figure(2)
+    
+    # 2&3. 进行实验模拟并比较结果
     compare_simulation_theory()
+    
     plt.show()
