@@ -1,23 +1,17 @@
 import matplotlib.pyplot as plt
-import random
 import numpy as np
 
 def random_walk_2d(steps):
     """Generate a 2D random walk trajectory"""
-    x, y = 0, 0
-    path = [(x, y)]
+    x_step = np.random.choice([-1,1],steps)
+    y_step = np.random.choice([-1,1],steps)
+
+    return(x_step.cumsum(), y_step.cumsum())
     
-    for _ in range(steps):
-        dx, dy = random.choice([(1, 1), (1, -1), (-1, 1), (-1, -1)])
-        x += dx
-        y += dy
-        path.append((x, y))
-    
-    return path
 
 def plot_single_walk(path):
     """Plot a single random walk trajectory"""
-    x_coords, y_coords = zip(*path)
+    x_coords, y_coords = path
     
     plt.plot(x_coords, y_coords, marker='.')
     plt.scatter([x_coords[0]], [y_coords[0]], color='green', s=100, label='Start')
@@ -32,7 +26,7 @@ def plot_multiple_walks():
     
     for i in range(4):
         path = random_walk_2d(1000)
-        x_coords, y_coords = zip(*path)
+        x_coords, y_coords = path
         
         axes[i].plot(x_coords, y_coords, marker='.')
         axes[i].scatter([x_coords[0]], [y_coords[0]], color='green', s=100, label='Start')

@@ -10,10 +10,16 @@ def random_walk_displacement(num_steps, num_simulations):
     num_simulations (int): 模拟的次数
 
     返回:
-    list: 包含每次模拟最终位移的列表
+    numpy.ndarray: 形状为(2, num_simulations)的数组，表示每次模拟的最终位移
     """
+    # TODO: 检查输入参数的有效性
+    
     # TODO: 实现随机行走算法
-    # 提示：使用 np.random.choice 生成随机步长
+    # 提示：
+    # 1. 使用 np.random.choice 生成随机步长 ([-1, 1])
+    # 2. 生成形状为 (2, num_simulations, num_steps) 的数组
+    # 3. 对步数维度求和得到最终位移
+    
     pass
 
 def plot_displacement_distribution(final_displacements, bins=30):
