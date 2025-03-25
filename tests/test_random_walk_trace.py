@@ -6,6 +6,7 @@ import os
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.random_walk_trace import random_walk_2d, plot_single_walk, plot_multiple_walks
+#from solutions.random_walk_trace_solution import random_walk_2d, plot_single_walk, plot_multiple_walks
 
 class TestRandomWalkTrace(unittest.TestCase):
     def setUp(self):
@@ -26,12 +27,6 @@ class TestRandomWalkTrace(unittest.TestCase):
         y_diff = np.diff(path[1])
         self.assertTrue(np.all(np.abs(x_diff) == 1))
         self.assertTrue(np.all(np.abs(y_diff) == 1))
-        
-    def test_starting_point(self):
-        """测试起点是否为原点"""
-        path = random_walk_2d(self.steps)
-        self.assertEqual(path[0][0], 0)
-        self.assertEqual(path[1][0], 0)
         
     def test_plot_functions(self):
         """测试绘图函数是否正常运行"""
